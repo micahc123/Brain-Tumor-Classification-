@@ -21,7 +21,9 @@ for file_name in os.listdir(folder_input_path):
 
     img = cv2.imread(file_path)
 
-    img = cv2.putText(img, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 225, 225))
+    font_scale = 2
+    thickness = 3  
+    img = cv2.putText(img, text, (10, 45), cv2.FONT_HERSHEY_SIMPLEX, font_scale, (255, 225, 225), thickness)
 
     output_file_path = os.path.join(folder_output_path, file_name)
     cv2.imwrite(output_file_path, img)
